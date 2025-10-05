@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Profit/Loss Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+  <div class="bg-white shadow-xl rounded-2xl p-6 w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center text-gray-800 mb-4">💹 Crypto PnL Calculator</h1>
+    <p class="text-sm text-gray-500 text-center mb-6">Calculate your profit/loss using leverage trading</p>
+
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Invested Capital (USDT)</label>
+        <input id="capital" type="number" step="any" class="mt-1 w-full p-2 border rounded-lg" placeholder="e.g. 10" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Entry Price (USDT)</label>
+        <input id="entryPrice" type="number" step="any" class="mt-1 w-full p-2 border rounded-lg" placeholder="e.g. 2.96" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Exit / Current Price (USDT)</label>
+        <input id="exitPrice" type="number" step="any" class="mt-1 w-full p-2 border rounded-lg" placeholder="e.g. 2.9537" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Quantity (Coins)</label>
+        <input id="quantity" type="number" step="any" class="mt-1 w-full p-2 border rounded-lg" placeholder="e.g. 4" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Leverage (×)</label>
+        <input id="leverage" type="number" step="1" class="mt-1 w-full p-2 border rounded-lg" placeholder="e.g. 10" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Position Type</label>
+        <select id="positionType" class="mt-1 w-full p-2 border rounded-lg">
+          <option value="long">Long</option>
+          <option value="short">Short</option>
+        </select>
+      </div>
+
+      <div class="pt-4">
+        <button onclick="calculatePnL()" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+          Calculate Profit/Loss
+        </button>
+      </div>
+    </div>
+
+    <div id="result" class="text-center mt-6 hidden">
+      <h2 class="text-lg font-semibold text-gray-800">Result:</h2>
+      <p id="usdtResult" class="text-green-600 text-xl font-bold mt-1"></p>
+      <p id="inrResult" class="text-gray-700 text-md mt-1"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
